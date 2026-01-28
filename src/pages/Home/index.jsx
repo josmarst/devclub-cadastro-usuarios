@@ -3,10 +3,10 @@
 // import viteLogo from '/vite.svg'
 import './style.css'
 //import Trash from './../../assets/trash.svg'
-import Trash from './../../assets/react.svg'
-import api from '../../services/api'
+import Trash from './../../assets/Trash.svg'
+import api from '../../services/api'  // importa o Axios pra fazer conexão com a API de serviço
 import { useEffect, useState, useRef } from 'react'
-//useState é usado pra alterar o valor de uma variável
+// useState é usado pra alterar o valor de uma variável
 // useRef pra pegar os dados inseridos no form e enviar pro banco
 
 function Home() {
@@ -43,7 +43,7 @@ function Home() {
   async function getUsers() {
     const usersFromAPI = await api.get('/usuarios')
     setUsers(usersFromAPI.data)
-    // console.log(users)
+     console.log(usersFromAPI.data)
   }
 
   // Cria um novo usuario e imprime na tela
@@ -62,7 +62,12 @@ function Home() {
     getUsers()
   }
 
-  useEffect(() => { }, [])
+
+  // O useEffect carrega os dados na página quando ela abre pela primeira vez ao chamar a função GetUsers()
+  useEffect(() => { 
+    getUsers()
+  }, [])
+
 
   return (
 
@@ -81,12 +86,12 @@ function Home() {
         <div key={user.id} className='card'>
           <div>
             <p>Nome: <span>{user.name}</span></p>
-            <p>Idade:<span>{user.age}</span></p>
+            <p>Idade: <span>{user.age}</span></p>
             <p>E-mail: <span>{user.email}</span></p>
           </div>
 
           <button onClick={() => deletertUsers(user.id)}>
-            <img src={Trash}></img>
+            <img src={Trash} style={{ width: '50%', height: '50%' }} alt="Lixo" />
           </button>
         </div>
       ))}

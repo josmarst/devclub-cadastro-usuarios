@@ -43,9 +43,9 @@ form {
     height: 40px;
     background-color: #363653;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 10px;
-    outline: none;
+    outline:none; 
   }
 }
 
