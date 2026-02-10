@@ -10,6 +10,8 @@ import { useEffect, useState, useRef } from "react";
 // useRef pra pegar os dados inseridos no form e enviar pro banco
 
 function Home() {
+  //#region  Usuarios
+
   // teste git
   // const [count, setCount] = useState(0)
   // const users = [
@@ -32,6 +34,7 @@ function Home() {
   //     email: 'terceiro@email.com',
   //   },
   // ]
+  //#endregion
 
   // let users = [] // const não se pode atribuir um novo valor, por isso é "let"
   const [users, setUsers] = useState([]);
@@ -45,8 +48,6 @@ function Home() {
     setUsers(usersFromAPI.data);
     console.log(usersFromAPI.data);
   }
-
-  //async function getPayment){}
 
   // Cria um novo usuario e imprime na tela
   async function createtUsers() {
