@@ -46,7 +46,7 @@ function Home() {
     console.log(usersFromAPI.data);
   }
 
-  //async function getPay(){}
+  //async function getPayment){}
 
   // Cria um novo usuario e imprime na tela
   async function createtUsers() {
